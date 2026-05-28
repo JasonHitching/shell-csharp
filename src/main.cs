@@ -6,7 +6,8 @@ class Program
         {
             Console.Write("$ ");
 
-            var command = Console.ReadLine();
+            var fullInput = Console.ReadLine();
+            var command = string.Split(fullInput).First();
             
             switch (command) {
               case "exit":
