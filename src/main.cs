@@ -7,9 +7,17 @@ class Program
             Console.Write("$ ");
 
             var command = Console.ReadLine();
-            if (command is "exit") break;
             
-            Console.WriteLine($"{command}: command not found");
+            switch (command) {
+              case "exit":
+                break;
+              case "echo":
+                Console.WriteLine(command);
+                break;
+              default:
+                Console.WriteLine($"{command}: command not found");
+                break;
+            };
         }
     }
 }
