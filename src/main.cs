@@ -15,7 +15,7 @@ class Program
               case "exit":
                 break;
               case "echo":
-                Console.WriteLine(splitCommand[1..]);
+                Console.WriteLine(splitCommand[1..].ToString());
                 break;
               default:
                 Console.WriteLine($"{command.First()}: command not found");
