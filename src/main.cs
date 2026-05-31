@@ -13,7 +13,7 @@ class Program
 
             switch (splitCommand.First()) {
               case "exit":
-                break;
+                return;
               case "echo":
                 Console.WriteLine(splitCommand[1]);
                 break;
