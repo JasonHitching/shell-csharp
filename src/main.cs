@@ -9,13 +9,13 @@ class Program
             Console.Write("$ ");
 
             var command = Console.ReadLine();
-            var splitCommand = command.Split(' ');
+            var splitCommand = command.Split(' ', 2);
 
             switch (splitCommand.First()) {
               case "exit":
                 break;
               case "echo":
-                Console.WriteLine(splitCommand[1..].ToString());
+                Console.WriteLine(splitCommand[1]);
                 break;
               default:
                 Console.WriteLine($"{command.First()}: command not found");
