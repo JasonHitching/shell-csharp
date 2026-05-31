@@ -18,7 +18,7 @@ class Program
                 Console.WriteLine(splitCommand[1]);
                 break;
               default:
-                Console.WriteLine($"{command.First()}: command not found");
+                Console.WriteLine($"{command}: command not found");
                 break;
             };
         }
