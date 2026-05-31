@@ -1,3 +1,5 @@
+using System.ComponentModel.Design;
+
 class Program
 {
     static void Main()
@@ -6,18 +8,17 @@ class Program
         {
             Console.Write("$ ");
 
-            var fullInput = Console.ReadLine();
-            var command = fullInput.Split(' ').First();
+            var command = Console.ReadLine();
+            var splitCommand = command.Split(' ');
 
-
-            switch (command) {
+            switch (splitCommand.First()) {
               case "exit":
                 break;
               case "echo":
-                Console.WriteLine(command);
+                Console.WriteLine(command[1..]);
                 break;
               default:
-                Console.WriteLine($"{command}: command not found");
+                Console.WriteLine($"{command.First()}: command not found");
                 break;
             };
         }
