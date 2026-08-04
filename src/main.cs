@@ -28,6 +28,7 @@ class Program
           }
           else
           {
+            CheckForPath(secondCommand);
             Console.WriteLine($"{secondCommand}: not found");
           }
 
