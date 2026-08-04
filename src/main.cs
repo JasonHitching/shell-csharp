@@ -59,7 +59,12 @@ class Program
 
     foreach (var folderPath in folderPaths!)
     {
-      Console.WriteLine(folderPath);
+      var files = Directory.EnumerateFiles(folderPath);
+
+      foreach (var file in files)
+      {
+        Console.WriteLine(file);
+      }
     }
 
     return true;
