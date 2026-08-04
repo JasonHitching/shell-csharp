@@ -65,5 +65,7 @@ class Program
         Console.WriteLine(file);
       }
     }
+
+    return true;
   }
 }
