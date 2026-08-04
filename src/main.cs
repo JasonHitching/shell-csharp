@@ -4,7 +4,7 @@ using System.Security.Permissions;
 
 class Program
 {
-  static readonly List<string> builtins = ["echo", "exit", "type"];
+  static readonly List<string> builtins = ["echo", "exit", "type", "cat"];
 
   static void Main()
   {
