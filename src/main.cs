@@ -54,6 +54,7 @@ class Program
   static bool CheckForPath(string secondCommand)
   {
     var environmentPaths = Environment.GetEnvironmentVariables();
+    Console.WriteLine(environmentPaths);
 
     foreach (var path in environmentPaths)
     {
