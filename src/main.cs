@@ -2,25 +2,41 @@ using System.ComponentModel.Design;
 
 class Program
 {
-    static void Main()
+  static void Main()
+  {
+    while (true)
     {
-        while (true)
-        {
-            Console.Write("$ ");
+      Console.Write("$ ");
 
-            var command = Console.ReadLine();
-            var splitCommand = command.Split(' ', 2);
+      var builtins = new List<string> { "echo", "exit", "type" };
 
-            switch (splitCommand.First()) {
-              case "exit":
-                return;
-              case "echo":
-                Console.WriteLine(splitCommand[1]);
-                break;
-              default:
-                Console.WriteLine($"{command}: command not found");
-                break;
-            };
-        }
+      var command = Console.ReadLine();
+      var splitCommand = command.Split(' ', 2);
+
+      Console.WriteLine(splitCommand);
+      switch (splitCommand.First())
+      {
+        case "exit":
+          return;
+        case "echo":
+          Console.WriteLine(splitCommand[1]);
+          break;
+        case "type":
+          string secondCommand = splitCommand[2];
+          if (builtins.Contains(secondCommand)) // recognised supported command
+          {
+            Console.WriteLine($"{secondCommand} is a shell builtin");
+          }
+          else
+          {
+            Console.WriteLine($"{secondCommand}: not found");
+          }
+          break;
+        default:
+          Console.WriteLine($"{command}: command not found");
+          break;
+      }
+      ;
     }
+  }
 }
