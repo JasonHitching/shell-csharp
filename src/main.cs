@@ -22,7 +22,7 @@ class Program
           Console.WriteLine(splitCommand[1]);
           break;
         case "type":
-          string secondCommand = splitCommand[2];
+          string secondCommand = splitCommand[1];
           if (builtins.Contains(secondCommand)) // recognised supported command
           {
             Console.WriteLine($"{secondCommand} is a shell builtin");
