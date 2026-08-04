@@ -70,7 +70,7 @@ class Program
         if (fileMode.HasFlag(UnixFileMode.OtherExecute) || fileMode.HasFlag(UnixFileMode.GroupExecute) || fileMode.HasFlag(UnixFileMode.UserExecute))
         {
           Console.WriteLine($"{secondCommand} is {combinedPath}");
-          break;
+          return true;
         }
       }
     }
