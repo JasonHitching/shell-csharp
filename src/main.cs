@@ -1,4 +1,6 @@
 using System.ComponentModel.Design;
+using System.Security;
+using System.Security.Permissions;
 
 class Program
 {
@@ -28,10 +30,12 @@ class Program
           }
           else
           {
-            CheckForPath(secondCommand);
-            Console.WriteLine($"{secondCommand}: not found");
+            if (!CheckForPath(secondCommand))
+            {
+              Console.WriteLine($"{secondCommand}: not found");
+            }
+            ;
           }
-
           break;
         default:
           Console.WriteLine($"{command}: command not found");
@@ -63,10 +67,13 @@ class Program
       if (File.Exists(combinedPath))
       {
         var fileMode = File.GetUnixFileMode(combinedPath);
-        Console.WriteLine(fileMode);
+        if (fileMode.HasFlag(UnixFileMode.OtherExecute) || fileMode.HasFlag(UnixFileMode.GroupExecute) || fileMode.HasFlag(UnixFileMode.UserExecute))
+        {
+          Console.WriteLine($"{secondCommand} is a {combinedPath}");
+        }
       }
     }
 
-    return true;
+    return false;
   }
 }
