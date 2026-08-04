@@ -69,7 +69,7 @@ class Program
         var fileMode = File.GetUnixFileMode(combinedPath);
         if (fileMode.HasFlag(UnixFileMode.OtherExecute) || fileMode.HasFlag(UnixFileMode.GroupExecute) || fileMode.HasFlag(UnixFileMode.UserExecute))
         {
-          Console.WriteLine($"{secondCommand} is a {combinedPath}");
+          Console.WriteLine($"{secondCommand} is {combinedPath}");
         }
       }
     }
