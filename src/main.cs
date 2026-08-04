@@ -54,16 +54,16 @@ class Program
   static bool CheckForPath(string secondCommand)
   {
     var path = Environment.GetEnvironmentVariable("PATH"); ;
-
     var folderPaths = path?.Split(':');
 
     foreach (var folderPath in folderPaths!)
     {
-      var files = Directory.EnumerateFiles(folderPath);
+      var combinedPath = Path.Combine(folderPath, secondCommand);
 
-      foreach (var file in files)
+      if (File.Exists(combinedPath))
       {
-        Console.WriteLine(file);
+        var fileMode = File.GetUnixFileMode(combinedPath);
+        Console.WriteLine(fileMode);
       }
     }
 
