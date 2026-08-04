@@ -53,20 +53,22 @@ class Program
 
   static bool CheckForPath(string secondCommand)
   {
-    var environmentPaths = Environment.GetEnvironmentVariables();
-    Console.WriteLine(environmentPaths);
+    var path = Directory.GetCurrentDirectory();
+    Console.WriteLine(path);
+    // var environmentPaths = Environment.GetEnvironmentVariables();
 
-    foreach (var path in environmentPaths)
-    {
-      if (path is null) continue;
+    // foreach (var path in environmentPaths)
+    // {
+    //   Path.
+    //   if (path is null) continue;
 
-      var directoryFiles = Directory.EnumerateFiles(path.ToString());
+    //   var directoryFiles = Directory.EnumerateFiles(path.ToString());
 
-      foreach (var file in directoryFiles)
-      {
-        Console.WriteLine(file);
-      }
-    }
+    //   foreach (var file in directoryFiles)
+    //   {
+    //     Console.WriteLine(file);
+    //   }
+    // }
 
     return true;
   }
