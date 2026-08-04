@@ -13,7 +13,6 @@ class Program
       var command = Console.ReadLine();
       var splitCommand = command.Split(' ', 2);
 
-      Console.WriteLine(splitCommand);
       switch (splitCommand.First())
       {
         case "exit":
